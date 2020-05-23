@@ -1,0 +1,20 @@
+>>> from app import db
+>>> from app.models import Plants
+>>> Plants.query.all()
+[<Plant pothos>, <Plant ZZ>]
+>>> pothos = Plants.query.filter_by(type='pothos').first()
+>>> pothos
+<Plant pothos>
+>>> print(pothos)
+<Plant pothos>
+>>> print(pothos.type)
+pothos
+>>> print(pothos.pot)
+grey
+>>> print(pothos.watering_frequency)
+7
+>>> for plant in Plants.query.all():
+...     print(plant.type)
+...
+pothos
+ZZ
